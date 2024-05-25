@@ -44,4 +44,19 @@ class EV extends Car {
     }
   }
 }
- 
+
+// Test Data
+const tesla = new EV('Tesla', 120, 23);
+
+// Test accelerate, brake and chargeBattery methods
+console.log("Initial state:");
+console.log(`${tesla.make} speed: ${tesla.speed} km/h, charge: ${tesla.charge}%`);
+
+console.log("Accelerating and Charging:");
+tesla.accelerate();
+tesla.accelerate();
+tesla.chargeBattery(23);
+
+console.log("Braking:");  
+tesla.brake();
+tesla.brake();
