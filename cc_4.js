@@ -19,15 +19,29 @@ class Car {
     console.log(`${this.make} speed decreased to ${this.speed} km/h`);
   }
 }
+
 // Implement and define the EV class
 class EV extends Car {
   constructor(make, speed, charge) {
     super(make, speed);
     this.charge = charge;
   }
+  
 // Method to charge the battery 
   chargeBattery(chargeTo) {
     this.charge = chargeTo;
     console.log(`${this.make} battery charged to ${this.charge}%`);
   }
   
+ // Override accelerate method to adjust speed and charge
+  accelerate() {
+    if (this.charge > 0) {
+      this.speed += 20;
+      this.charge -= 1;
+      console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`);
+    } else {
+      console.log(`${this.make} has insufficient charge to accelerate.`);
+    }
+  }
+}
+ 
